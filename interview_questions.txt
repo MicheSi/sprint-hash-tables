@@ -1,0 +1,51 @@
+## Interview Questions
+
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
+
+1. Hashing functions
+
+A hashing function is a function that is used to map data (of any type) to a number. There are 3 requirements for a hash function:
+    1. It must be deterministic, meaning every time is receives the same input, it must return the same output.
+    2. Different input data should return different numbers.
+    3. It must return numbers within a specific range.
+
+2. Collision resolution
+
+Two ways we learned to deal with collisions is Open Addressing (with Linear Probing) and Chaining.
+
+Open Addressing
+You start at the collision location and move sequentially through the slots in the hash table until an empty slot is found.
+That empty slot is assigned the collision data.
+
+Chaining
+Allows each slot to hold a reference to a chain of items that way multiple items can be found at a slot.
+
+3. Performance of basic hash table operations
+
+Worst case - O(n) meaning every entry (n) was placed in the linked list by a single index
+
+Average cast - O(1) meaning run time is not affected by size. Data is spread evenly across the hash table.
+
+4. Load factor
+
+Load factor is calculated by taking the Number of Items in a Hash Table (# of occupied slots)
+and dividing it by the Total Number of Slots (length of array).
+
+If load factor is greater than 0.7, it is recommended that you resize your hash table (typically to double the size).
+If load factor gets too low, memory is being wasted, so it's recommended that you resize your hash table if load factor gets too low.
+
+5. Automatic resizing
+
+The size of a hash table is based on the number of slots the table can hold at a given time. If the number of slots exceeds the number of items
+in the hash table, it will automatically grow, increasing the size to a new value large enough to hold all slots.
+
+6. Various use cases for hash tables
+
+Lookups - map one thing to another to be able to look it up
+    Example: phone book - maps a name to a phone number
+
+Prevent Duplication - allowing only one value for each key
+    Example: voting system - one vote per person
+
+Caching - store data in a cache so that it can be pulled from the cache instead of having to compute every time
+    Example: Servers - can cache data for much quicker processing instead of having to pull from the URL every time
