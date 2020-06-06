@@ -2,7 +2,18 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    nums = {}
+    result = []
+
+    # iterate through a
+    for num in a:
+        # change num to absolute value and check if already in dict
+        if abs(num) in nums:
+            # add absolute value to result
+            result.append(abs(num))
+        # num doesn't exist, so it's the only one
+        else:
+            nums[abs(num)] = 1
 
     return result
 
