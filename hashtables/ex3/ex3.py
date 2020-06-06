@@ -2,7 +2,25 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    nums = {}
+    result = []
+
+    # iterate through array
+    for i in range(len(arrays)):
+        # create key for each value
+        for num in arrays[i]:
+            # if num already exists in dict, increment count
+            if num in nums:
+                nums[num] += 1
+            # otherwise, that key is the count
+            else:
+                nums[num] = 1
+
+    # loop through keys
+    for key in nums:
+        # if key exists in arrays, add to result list
+        if nums[key] == len(arrays):
+            result.append(key)
 
     return result
 
