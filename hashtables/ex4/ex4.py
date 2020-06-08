@@ -14,7 +14,7 @@ def has_negatives(a):
         # num doesn't exist, so it's the only one
         else:
             nums[abs(num)] = 1
-
+    # return array with absolute values of duplicates
     return result
 
 

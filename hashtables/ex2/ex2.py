@@ -1,8 +1,8 @@
 #  Hint:  You may not need all of these.  Remove the unused functions.
 class Ticket:
     def __init__(self, source, destination):
-        self.source = source
-        self.destination = destination
+        self.source = source # starting location
+        self.destination = destination # where flight is going to
 
 
 def reconstruct_trip(tickets, length):
@@ -12,12 +12,12 @@ def reconstruct_trip(tickets, length):
     flights = {}
     route = []
 
-    # create key & value for each ticket
+    # loop through length of list, create key & value for each ticket
     for i in range(length):
         key = tickets[i].source
         value = tickets[i].destination
 
-        flights[key] = value
+        flights[key] = value # this creates the key/value pair in the dict
 
     # if key is NONE, flight is start of route
     key = flights['NONE']

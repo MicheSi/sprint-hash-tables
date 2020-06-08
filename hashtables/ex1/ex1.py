@@ -4,7 +4,9 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     weight = {}
 
+    # loop through length of list
     for i in range(length):
+        # assign pointer to current index
         cur = weights[i]
         # if current weight already in dict, add it to value of key
         if cur in weight:
@@ -13,6 +15,7 @@ def get_indices_of_item_weights(weights, length, limit):
         else:
             weight[cur] = [i]
     
+    # loop through keys in weight dict
     for key in weight:
         # subtract current key(weight) from limit to find target weight
         target = limit - key
@@ -22,7 +25,7 @@ def get_indices_of_item_weights(weights, length, limit):
             if len(weight[target]) != 1:
                 # return tuple of indices of duplicates
                 return tuple(sorted(weight[target], reverse=True))
-
+            # no duplicate, 1st time seeing this value
             else:
                 # return tuple with target weight and key
                 return tuple(sorted((weight[target][0], weight[key][0]), reverse=True))
